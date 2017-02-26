@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CaffeineLibraryComponent } from './caffeine-library/caffeine-library.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CaffeineLibraryComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
