@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AlertModule } from 'ng2-bootstrap';
 
 import { appRoutes } from './routes';
+import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { appRoutes } from './routes';
     CaffeineLibraryComponent,
     UserComponent,
     NavbarComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
