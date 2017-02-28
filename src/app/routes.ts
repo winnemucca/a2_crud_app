@@ -6,5 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 export const appRoutes: Routes = [
     {path: 'userLogin', component: UserComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'dashboard', component: DashboardComponent}
+    {path: 'dashboard', component: DashboardComponent},
+    {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
