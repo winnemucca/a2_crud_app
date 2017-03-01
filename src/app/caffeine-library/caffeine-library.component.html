@@ -1,8 +1,18 @@
-<div class="panel panel-default">
-  <div class="panel-heading panel-heading-custom">
-      <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-      Panel content
-  </div>
+<div class="container-fluid">
+    <div class="row" *ngFor="let drink of drinks">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-heading-custom">
+                <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
+            </div>
+            <div class="panel-body panel-body-custom">
+                <div class="col-sm-9 col-md-8 col-lg-8">
+                    <p class="caffeine-label">Size: {{drink.size}} </p>
+                    <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-4">
+                    <p><i class="fa fa-heart fa-5x"> </i> </p>
+                </div> 
+            </div>
+        </div>
+    </div>
 </div>

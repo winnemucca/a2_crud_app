@@ -1,5 +1,22 @@
-.panel-default > .panel-heading-custom{
-  background-image: none;
-  background-color: #2E83BE;
-  color: #ffffff;
+.panel-default {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.panel-heading-custom {
+    background-color: #18BC9C;
+    color: #ffffff;
+
+}
+
+.panel-body-custom {
+    background-color: #2E83BE;
+}
+
+.caffeine-label {
+    font-size: 2em;
+}
+
+.panel-title-custom {
+    font-size: 1.5em;
 }
