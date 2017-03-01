@@ -10,13 +10,13 @@ import { CaffeineListService } from './caffeine-list.service';
 })
 export class CaffeineLibraryComponent implements OnInit {
   errorMessage: string;
-  caffDrinks: CaffeineModel[];
+  drinks: CaffeineModel[];
 
   constructor(private _caffeineListService: CaffeineListService) { }
 
   ngOnInit(): void {
     this._caffeineListService.getAllDrinks()
-      .subscribe(drinks => this.caffDrinks,
+      .subscribe(drinks => this.drinks = drinks,
         error => this.errorMessage = <any> error);
   }
 
