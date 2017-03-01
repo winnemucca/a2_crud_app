@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './404component/404component.component';
 import { CaffeineLibraryComponent } from './caffeine-library/caffeine-library.component';
 
 export const appRoutes: Routes = [
-    {path: 'userLogin', component: UserComponent},
+    {path: 'signUp', component: UserComponent},
     {path: 'home', component: HomeComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'library', component: CaffeineLibraryComponent},
