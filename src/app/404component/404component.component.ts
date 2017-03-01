@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './404component.component.html',
   styleUrls: ['./404component.component.css']
 })
-export class 404componentComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit {
 
   constructor() { }
 

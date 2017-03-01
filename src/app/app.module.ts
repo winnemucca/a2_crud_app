@@ -15,7 +15,9 @@ import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
-import { 404componentComponent } from './404component/404component.component';
+import { PageNotFoundComponent } from './404component/404component.component';
+
+import { CaffeineListService } from './caffeine-library/caffeine-list.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { 404componentComponent } from './404component/404component.component';
     HomeComponent,
     DashboardComponent,
     FooterComponent,
-    404componentComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { 404componentComponent } from './404component/404component.component';
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [],
+  providers: [CaffeineListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
