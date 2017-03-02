@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './404component/404component.component';
 
 import { CaffeineListService } from './caffeine-library/caffeine-list.service';
+import { UserAuthService } from './user/user-auth.service';
 
 @NgModule({
   declarations: [
@@ -33,12 +34,13 @@ import { CaffeineListService } from './caffeine-library/caffeine-list.service';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AlertModule,
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [CaffeineListService],
+  providers: [CaffeineListService, UserAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
