@@ -17,3 +17,17 @@ body{
 small {
     font-size: 75%;
 }
+
+em { 
+    float: right;
+    color: #E05C65;
+    padding-left: 10px
+}
+
+.error input{
+    background-color: #E05C65;
+}
+.error ::-webkit-input-placeholder { color: #999}
+.error ::-moz-placeholder { color: #999}
+.error :-moz-placeholder { color: #999}
+.error :ms-input-placeholder { color: #999}

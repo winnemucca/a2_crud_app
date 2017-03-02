@@ -8,30 +8,35 @@
 			 			<div class="panel-body">
 							<form [formGroup]="signUpForm" (ngSubmit)="registerUser(signUpForm.value)"role="form" autocomplete="off" novalidate>
 								<div class="row">
-									<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="col-xs-6 col-sm-6 col-md-6" [ngClass]="{'error': !validateFirstName()}">
 										<div class="form-group">
+											<em *ngIf="!validateFirstName()">Required</em>
 											<input formControlName="first_name" type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name">
 										</div>
 									</div>
 									<div class="col-xs-6 col-sm-6 col-md-6">
-										<div class="form-group">
+										<div class="form-group" [ngClass]="{'error': !validateLastName()}">
+											<em *ngIf="!validateLastName()">Required</em>
 											<input formControlName="last_name" type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name">
 										</div>
 									</div>
 								</div>
 
-								<div class="form-group">
+								<div class="form-group" [ngClass]="{'error': !validateEmail()}">
+									<em *ngIf="!validateEmail()">Required</em>
 									<input formControlName="email" type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
 								</div>
 
 								<div class="row">
-									<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="col-xs-6 col-sm-6 col-md-6" [ngClass]="{'error': !validatePassword()}">
 										<div class="form-group">
+											<em *ngIf="!validatePassword()">Required</em>
 											<input formControlName="password" type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
 										</div>
 									</div>
 									<div class="col-xs-6 col-sm-6 col-md-6">
 										<div class="form-group">
+											<em *ngIf="!validatePassword()">Required</em>
 											<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password">
 										</div>
 									</div>

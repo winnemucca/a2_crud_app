@@ -8,24 +8,42 @@ import { UserAuthService } from './user-auth.service';
 })
 export class UserComponent implements OnInit {
   signUpForm: FormGroup;
+  private first_name: FormControl;
+  private last_name: FormControl;
+  private email: FormControl;
+  private password: FormControl;
   constructor(private authService: UserAuthService) { }
 
   ngOnInit() {
-    const first_name = new FormControl(Validators.required);
-    const last_name = new FormControl(Validators.required);
-    const email = new FormControl(Validators.required);
-    const password = new FormControl(Validators.required);
+    this.first_name = new FormControl(Validators.required);
+    this.last_name = new FormControl(Validators.required);
+    this.email = new FormControl(Validators.required);
+    this.password = new FormControl(Validators.required);
     this.signUpForm = new FormGroup({
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      password: password
+      first_name: this.first_name,
+      last_name: this.last_name,
+      email: this.email,
+      password: this.password
     });
   }
 
   registerUser(formValues) {
      this.authService.signUpUser(formValues.first_name, formValues.last_name, formValues.email, formValues.password);
    console.log('clicked');
+  }
+
+  validateLastName() {
+    return this.last_name.invalid || this.last_name.untouched;
+  }
+
+  validateFirstName() {
+        return this.first_name.invalid || this.first_name.untouched;
+  }
+  validateEmail() {
+        return this.email.invalid || this.email.untouched;
+  }
+  validatePassword() {
+        return this.password.invalid || this.password.untouched;
   }
 
 }

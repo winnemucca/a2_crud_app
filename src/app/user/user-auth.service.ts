@@ -10,8 +10,7 @@ export class UserAuthService {
     last_name: '',
     email: '',
     password: ''
-  };
-
+  }; // IUser;
 
   constructor(private http: Http) {}
 
