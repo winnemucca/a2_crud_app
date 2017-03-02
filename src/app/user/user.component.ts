@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserAuthService } from './user-auth.service';
 @Component({
   selector: 'app-user',
@@ -11,10 +11,10 @@ export class UserComponent implements OnInit {
   constructor(private authService: UserAuthService) { }
 
   ngOnInit() {
-    const first_name = new FormControl();
-    const last_name = new FormControl();
-    const email = new FormControl();
-    const password = new FormControl();
+    const first_name = new FormControl(Validators.required);
+    const last_name = new FormControl(Validators.required);
+    const email = new FormControl(Validators.required);
+    const password = new FormControl(Validators.required);
     this.signUpForm = new FormGroup({
       first_name: first_name,
       last_name: last_name,
