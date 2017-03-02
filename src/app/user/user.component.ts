@@ -56,17 +56,17 @@ export class UserComponent implements OnInit {
   }
 
   validateLastName() {
-    return this.last_name.invalid || this.last_name.untouched;
+    return this.last_name.valid || this.last_name.untouched;
   }
 
   validateFirstName() {
-        return this.first_name.invalid || this.first_name.untouched;
+        return this.first_name.valid || this.first_name.untouched;
   }
   validateEmail() {
-        return this.email.invalid || this.email.untouched;
+        return this.email.valid || this.email.untouched;
   }
   validatePassword() {
-        return this.password.invalid || this.password.untouched;
+        return this.password.valid || this.password.untouched;
   }
 
 }
