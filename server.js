@@ -7,9 +7,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const api = require('./server/routes/api');
 
-let userRoutes = require('./server/routes/signIn');
-let userDrinkRoutes = require('./server/routes/caffeineApiRoute');
+const userRoutes = require('./server/routes/signIn');
+const userDrinkRoutes = require('./server/routes/caffeineApiRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,9 +28,8 @@ mongoose.connect(mongoUri, function (err, db) {
   console.log('connected!',db);
 });
 /* GET api listing. */
-router.get('/', (req, res) => {
-  res.send('api works');
-});
+app.use('/api', api);
+
 
 const port = process.env.PORT || '3000';
 app.set('port', port);
