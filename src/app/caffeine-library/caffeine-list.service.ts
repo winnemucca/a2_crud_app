@@ -21,6 +21,11 @@ export class CaffeineListService {
       .catch(this.handleError);
   }
 
+  getImportedDrinks() {
+    // imported json file into mongodb connect to service and api controller
+    return '';
+  }
+
   private handleError(error: Response) {
     console.log(error);
     return Observable.throw(error.json().error || 'server error');

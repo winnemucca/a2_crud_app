@@ -1,3 +1,6 @@
+const express = require('express');
+const router = express.Router();
+
 router.post('/user', (req, res, next) => {
   let name = req.bod.name;
   res.redirect('/user/ ' + name);
