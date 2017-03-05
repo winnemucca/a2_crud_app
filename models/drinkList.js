@@ -1,8 +1,7 @@
 let express = require('express');
 let mongoose = require('mongoose');
-let Drink = require('../models/drinkList');
 
-let DrinkSchema = new mongoose.Schema({
+let DrinkSchema = new mongoose.Schema({ // if issues go back to new Schema
     mgFloz: Number,
     name: String,
     imageUrl: String,
