@@ -10,6 +10,8 @@ let DrinkSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     }
-})
+});
+
+module.exports = mongoose.model('AvailableDrinks', DrinkSchema);
 
 //let Drink = mongoose.model('Drink', )

@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/caffeine';
+let userRoutes = require('./server/routes/signIn');
+let userDrinkRoutes = require('./server/routes/caffeineApiRoute');
+
+let mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/caffeine';
+
+
 mongoose.connect(mongoUri, function (err, db) {
   if (err) {
     console.log(err);
