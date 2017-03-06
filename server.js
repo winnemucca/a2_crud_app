@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const api = require('./server/routes/api');
-
 const userRoutes = require('./server/routes/signIn');
 const userDrinkRoutes = require('./server/routes/caffeineApiRoute');
 
@@ -30,6 +29,11 @@ mongoose.connect(mongoUri, function (err, db) {
 /* GET api listing. */
 app.use('/api', api);
 
+// **   todo ****
+// ************************* 
+app.use('/caffeineDrinks', userDrinkRoutes);
+
+// ********************** fix above in morning *****//
 
 const port = process.env.PORT || '3000';
 app.set('port', port);
