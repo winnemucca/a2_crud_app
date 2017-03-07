@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const api = require('./server/routes/api');
-const userRoutes = require('./server/routes/signIn');
+const users = require('./server/routes/signIn');
 const userDrinkRoutes = require('./server/routes/caffeineApiRoute');
 
 app.use(bodyParser.json());
@@ -28,6 +28,8 @@ mongoose.connect(mongoUri, function (err, db) {
 });
 /* GET api listing. */
 app.use('/api', api);
+
+app.use('/users', users);
 
 // **   todo ****
 // ************************* 
