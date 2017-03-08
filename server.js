@@ -27,7 +27,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
 
-
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
