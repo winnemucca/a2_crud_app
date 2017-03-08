@@ -29,7 +29,6 @@ module.exports.getUserById = function(id, callback) {
 }
 
 module.exports.getUserByUserName = function(username, callback) {
-    console.log('user.js', username);
     const query = {username: username}
     User.findOne(query, callback);
 }
