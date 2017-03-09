@@ -19,6 +19,8 @@ import { PageNotFoundComponent } from './404component/404component.component';
 
 import { CaffeineListService } from './caffeine-library/caffeine-list.service';
 import { UserAuthService } from './user/user-auth.service';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { UserAuthService } from './user/user-auth.service';
     HomeComponent,
     DashboardComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
