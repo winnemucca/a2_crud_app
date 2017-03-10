@@ -5,6 +5,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const cors = require('cors');
 
 const config = require('./config/database');;
 
@@ -22,6 +23,8 @@ mongoose.connection.on('connected', () => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cors());
 
 app.use(passport.initialize());
 app.use(passport.session());

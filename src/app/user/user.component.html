@@ -6,8 +6,46 @@
 			    		<h2 class="panel-title">Please sign up for Sparked <small>It's free!</small></h2>
 			 			</div>
 			 			<div class="panel-body">
-							<form [formGroup]="signUpForm" (ngSubmit)="registerUser(signUpForm.value)"role="form" autocomplete="off" novalidate>
-								<!--<div class="row">-->
+							<form  (submit)="onRegisterSubmit()" role="form" autocomplete="off" novalidate>
+								
+								<div class="form-group">
+									<!--<em *ngIf="!validateusername()">Required</em>-->
+									<input [(ngModel)]="username" name="username" type="text" id="username" class="form-control input-lg" placeholder="user name">
+								</div>
+
+								<div class="form-group">
+									<!--[ngClass]="{'error': !validateEmail()}"-->
+									<!--<em *ngIf="!validateEmail()">Required</em>-->
+									<input [(ngModel)]="email" type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+								</div>
+
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<div class="form-group">
+											<!--<em *ngIf="!validatePassword()">Required</em>-->
+											<input [(ngModel)]="password" type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<div class="form-group">
+											<!--<em *ngIf="!validatePassword()">Required</em>-->
+											<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password">
+										</div>
+									</div>
+								</div>
+								
+								<input  type="submit" value="Submit" class="btn btn-info btn-block">
+								
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- *********may come back to this********-->
+
+<!--<div class="row">-->
 									<!--<div class="col-xs-6 col-sm-6 col-md-6" [ngClass]="{'error': !validateFirstName()}">
 										<div class="form-group">
 											<em *ngIf="!validateFirstName()">Required</em>
@@ -21,36 +59,3 @@
 										</div>
 									</div>-->
 								<!--</div>-->
-								<div class="form-group" [ngClass]="{'error': !validateusername()}">
-									<em *ngIf="!validateusername()">Required</em>
-									<input formControlName="username" type="text" [(ngModel)]="username" name="username" id="username" class="form-control input-lg" placeholder="user name">
-								</div>
-
-								<div class="form-group" [ngClass]="{'error': !validateEmail()}">
-									<em *ngIf="!validateEmail()">Required</em>
-									<input formControlName="email" type="email" [(ngModel)]="email"name="email" id="email" class="form-control input-lg" placeholder="Email Address">
-								</div>
-
-								<div class="row">
-									<div class="col-xs-6 col-sm-6 col-md-6" [ngClass]="{'error': !validatePassword()}">
-										<div class="form-group">
-											<em *ngIf="!validatePassword()">Required</em>
-											<input formControlName="password" type="password" [(ngModel)]="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
-										</div>
-									</div>
-									<div class="col-xs-6 col-sm-6 col-md-6">
-										<div class="form-group">
-											<em *ngIf="!validatePassword()">Required</em>
-											<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password">
-										</div>
-									</div>
-								</div>
-								
-								<input  type="submit" value="Register" class="btn btn-info btn-block">
-								
-						</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
