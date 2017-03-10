@@ -20,7 +20,7 @@ export class UserAuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
-      .map(res => res.json())
+      .map(res => res.json());
   }
 
   // validation emails can be moved out to validation service;
