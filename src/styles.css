@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
- @media only screen and (min-width : 320px) {
-        
-    }
+/*if device width is greater than or equal to 320 than do*/
+@media only screen and (min-width : 320px) {
+    
+}
 
     /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
@@ -22,3 +23,20 @@
 @media only screen and (min-width : 1200px) {
 
 }
+
+/*also to review*/
+/*@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape){
+
+}
+
+@media screen and (min-width: 992px) {
+
+}*/

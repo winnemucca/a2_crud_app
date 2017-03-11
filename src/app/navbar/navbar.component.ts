@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAuthService } from '../user/user-auth.service';
+import { Router } from '@angular/router';
+ // move this to a shared services folder;
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userAuth: UserAuthService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+  }
+
+  onLogoutClick() {
+
   }
 
 }
