@@ -22,6 +22,8 @@ import { UserAuthService } from './user/user-auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from './shared/guards/auth.guards';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [CaffeineListService, UserAuthService],
+  providers: [CaffeineListService, UserAuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

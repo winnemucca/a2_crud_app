@@ -12,13 +12,13 @@
   <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a [routerLink]="['dashboard']">Dashboard</a></li>
+        <li *ngIf="userAuth.loggedIn()"><a [routerLink]="['profile']">Profile</a></li>
+        <li *ngIf="userAuth.loggedIn()"><a [routerLink]="['dashboard']">Dashboard</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['signUp']">Sign Up </a></li>
-        <li><a href="#" (click)="onLogoutClick()">LogOut </a></li>
+        <li *ngIf="!userAuth.loggedIn()"><a [routerLink]="['signUp']">Register </a></li>
+        <li *ngIf="userAuth.loggedIn()"><a href="#" (click)="onLogoutClick()">LogOut </a></li>
         
       </ul>
     </div>

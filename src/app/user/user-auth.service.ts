@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { IUser } from './user.model';
 
+import { tokenNotExpired } from 'angular2-jwt';
+
 @Injectable()
 export class UserAuthService {
   authToken: any;
@@ -50,6 +52,10 @@ export class UserAuthService {
   loadToken() { // can access class property throughout class
     const token = localStorage.getItem('id_token');
     this.authToken = token;
+  }
+
+  loggedIn() {
+    return tokenNotExpired();
   }
 
   validateEmail(email) {
