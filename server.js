@@ -36,12 +36,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 let mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/caffeine';
 
 
-// mongoose.connect(mongoUri, function (err, db) {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log('connected!',db);
-// });
 /* GET api listing. */
 app.use('/api', api);
 
@@ -51,7 +45,16 @@ app.use('/users', users);
 // ************************* 
 app.use('/caffeineDrinks', userDrinkRoutes);
 
-// ********************** fix above in morning *****//
+
+// ******* need to study up on following response.send ***********
+// app.get('/',(req, res) => {
+//     res.send('invalid endpoint');
+// })
+
+
+// app.get('*', req, res => {
+//     res.sendFile(path.join(__dirname, 'dist/index.html'))
+// })
 
 const port = process.env.PORT || '3000';
 app.set('port', port);
