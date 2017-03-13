@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -21,9 +21,11 @@ export class CaffeineListService {
       .catch(this.handleError);
   }
 
-  getImportedDrinks() {
-    // imported json file into mongodb connect to service and api controller
-    return '';
+  getAllCAffeineDrinks() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this._http.get('http://localhost:3000/caffeineDrinks/drinks', { headers: headers })
+      .map(res => res.json());
   }
 
   private handleError(error: Response) {
