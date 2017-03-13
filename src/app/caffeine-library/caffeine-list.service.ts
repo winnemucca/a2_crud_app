@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/filter';
+
 
 
 
@@ -26,7 +28,6 @@ export class CaffeineListService {
     headers.append('Content-Type', 'application/json');
     return this._http.get('http://localhost:3000/caffeineDrinks/drinks', { headers: headers })
       .map(res => res.json())
-      .filter(shortList => shortList.mgFloz < 10)
       .do(data => console.log('some: ' + JSON.stringify(data)))
       .catch(this.handleError);
 

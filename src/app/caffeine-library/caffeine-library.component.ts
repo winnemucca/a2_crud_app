@@ -16,10 +16,10 @@ export class CaffeineLibraryComponent implements OnInit {
   constructor(private _caffeineListService: CaffeineListService) { }
 
   ngOnInit(): void {
-    this._caffeineListService.getAllDrinks()
-      .subscribe(
-        drinks => this.drinks = drinks,
-        error => this.errorMessage = <any> error);
+    // this._caffeineListService.getAllDrinks()
+    //   .subscribe(
+    //     drinks => this.drinks = drinks,
+    //     error => this.errorMessage = <any> error);
 
     this._caffeineListService.getAllCAffeineDrinks()
       .subscribe(
