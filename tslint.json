@@ -63,6 +63,7 @@
       "check-else",
       "check-whitespace"
     ],
+    "file-header": [true],
     "prefer-const": true,
     "quotemark": [
       true,
