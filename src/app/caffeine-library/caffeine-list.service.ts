@@ -25,7 +25,11 @@ export class CaffeineListService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.get('http://localhost:3000/caffeineDrinks/drinks', { headers: headers })
-      .map(res => res.json());
+      .map(res => res.json())
+      .filter(shortList => shortList.mgFloz < 10)
+      .do(data => console.log('some: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+
   }
 
   private handleError(error: Response) {

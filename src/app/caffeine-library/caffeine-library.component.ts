@@ -11,6 +11,7 @@ import { CaffeineListService } from './caffeine-list.service';
 export class CaffeineLibraryComponent implements OnInit {
   errorMessage: string;
   drinks: CaffeineModel[]; // assign to this array
+  caffDrinks: CaffeineModel[]; // assign to this array
 
   constructor(private _caffeineListService: CaffeineListService) { }
 
@@ -18,6 +19,11 @@ export class CaffeineLibraryComponent implements OnInit {
     this._caffeineListService.getAllDrinks()
       .subscribe(
         drinks => this.drinks = drinks,
+        error => this.errorMessage = <any> error);
+
+    this._caffeineListService.getAllCAffeineDrinks()
+      .subscribe(
+        caffDrinks => this.caffDrinks = caffDrinks,
         error => this.errorMessage = <any> error);
   }
 
