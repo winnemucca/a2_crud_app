@@ -9,7 +9,7 @@ import { CaffeineLibraryComponent } from './caffeine-library/caffeine-library.co
 import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { AlertModule } from 'ng2-bootstrap';
+import { AlertModule, PaginationModule } from 'ng2-bootstrap';
 
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
@@ -43,6 +43,7 @@ import { AuthGuard } from './shared/guards/auth.guards';
     ReactiveFormsModule,
     HttpModule,
     AlertModule,
+    PaginationModule.forRoot(),
     RouterModule.forRoot(appRoutes)
 
   ],

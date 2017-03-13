@@ -28,7 +28,7 @@ export class CaffeineListService {
     headers.append('Content-Type', 'application/json');
     return this._http.get('http://localhost:3000/caffeineDrinks/drinks', { headers: headers })
       .map(res => res.json())
-      .do(data => console.log('some: ' + JSON.stringify(data)))
+      .do(data => console.log('length: ' + JSON.stringify(data.length)))
       .catch(this.handleError);
 
   }

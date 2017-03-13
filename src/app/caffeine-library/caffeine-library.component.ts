@@ -10,21 +10,32 @@ import { CaffeineListService } from './caffeine-list.service';
 })
 export class CaffeineLibraryComponent implements OnInit {
   errorMessage: string;
-  drinks: CaffeineModel[]; // assign to this array
   caffDrinks: CaffeineModel[]; // assign to this array
+
+  totalItems: number = 726; // hard code for now.  Need to find dynamic way 
+  currentPage: number = 1;
+  smallnumPages: number = 0;
 
   constructor(private _caffeineListService: CaffeineListService) { }
 
   ngOnInit(): void {
-    // this._caffeineListService.getAllDrinks()
-    //   .subscribe(
-    //     drinks => this.drinks = drinks,
-    //     error => this.errorMessage = <any> error);
-
     this._caffeineListService.getAllCAffeineDrinks()
       .subscribe(
         caffDrinks => this.caffDrinks = caffDrinks,
         error => this.errorMessage = <any> error);
+          // console.log(this.caffDrinks.length);
+
   }
+
+  setPage(pageNo: number) {
+    this.currentPage = pageNo;
+  }
+
+  pageChange(event: any) {
+    console.log('Page changed to: ' + event.page);
+    console.log('Number items per page: ' + event.itemsPerPage);
+  }
+
+  
 
 }
