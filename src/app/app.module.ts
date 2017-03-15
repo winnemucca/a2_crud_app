@@ -9,8 +9,11 @@ import { CaffeineLibraryComponent } from './caffeine-library/caffeine-library.co
 import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+// third party Libraries
 import { AlertModule, PaginationModule } from 'ng2-bootstrap';
+import {ToastModule, ToastOptions} from 'ng2-toastr/ng2-toastr';
 
+import { ToastCustomOptions } from './shared/common/toastr.service';
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -42,12 +45,17 @@ import { AuthGuard } from './shared/guards/auth.guards';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AlertModule,
+    ToastModule,
     PaginationModule.forRoot(),
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [CaffeineListService, UserAuthService, AuthGuard],
+  providers: [
+    CaffeineListService, 
+    UserAuthService, 
+    AuthGuard,
+    {provide: ToastOptions, useClass: ToastCustomOptions},
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

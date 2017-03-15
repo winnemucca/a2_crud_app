@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; 
 
 import { CaffeineModel } from './caffeine-model';
 import { CaffeineListService } from './caffeine-list.service';
@@ -12,9 +12,13 @@ export class CaffeineLibraryComponent implements OnInit {
   errorMessage: string;
   caffDrinks: CaffeineModel[]; // assign to this array
 
-  totalItems: number = 726; // hard code for now.  Need to find dynamic way 
-  currentPage: number = 1;
-  smallnumPages: number = 0;
+  maxSize:number = 5;
+  bigTotalItems:number = 726;
+  bigCurrentPage:number = 1;
+  numPages:number = 0;
+  itemsPerPage: number = 10;
+ 
+  
 
   constructor(private _caffeineListService: CaffeineListService) { }
 
@@ -23,19 +27,13 @@ export class CaffeineLibraryComponent implements OnInit {
       .subscribe(
         caffDrinks => this.caffDrinks = caffDrinks,
         error => this.errorMessage = <any> error);
-          // console.log(this.caffDrinks.length);
 
   }
 
-  setPage(pageNo: number) {
-    this.currentPage = pageNo;
-  }
 
-  pageChange(event: any) {
-    console.log('Page changed to: ' + event.page);
-    console.log('Number items per page: ' + event.itemsPerPage);
-  }
 
-  
+  selectCaffeineDrink(drink) {
+    console.log('clicked', drink)
+  }
 
 }

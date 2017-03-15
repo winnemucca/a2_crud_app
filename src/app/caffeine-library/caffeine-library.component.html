@@ -1,10 +1,11 @@
 <div class="container-fluid">
-    <div class="row" *ngFor="let drink of caffDrinks">
-        <div class="panel panel-default">
+    <div class="row">
+        <div *ngFor="let drink of caffDrinks" class="panel panel-default">
+
             <div class="panel-heading panel-heading-custom">
                 <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
             </div>
-            <div class="panel-body panel-body-custom">
+            <div class="panel-body panel-body-custom" (click)="selectCaffeineDrink(drink)">
                 <div class="col-sm-9 col-md-8 col-lg-8">
                     <p class="caffeine-label">Size: {{drink.size}} </p>
                     <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
@@ -14,13 +15,29 @@
                 </div> 
             </div>
         </div>
-    </div>
+            <pagination 
+                class="pagination-sm"
+                [itemsPerPage]="10"
+                [totalItems]="bigTotalItems" 
+                [(ngModel)]="bigCurrentPage" 
+                [maxSize]="maxSize" 
+                [boundaryLinks]="true" 
+                [rotate]="false" 
+                (numPages)="numPages = $event">
+            </pagination>
+        <div class="col-md-6">
+            <!--<pagination 
+                class="pagination-sm"
+                [totalItems]="bigTotalItems" 
+                [(ngModel)]="bigCurrentPage" 
+                [maxSize]="maxSize" 
+                [boundaryLinks]="true" 
+                [rotate]="false" 
+                [itemsPerPage]="10"
+                (numPages)="numPages = $event">
+            </pagination>-->
+        </div>
 
-    <div class="col-md-6" style="margin: 20px 0;">
-        <pagination [directionLinks]="false" [totalItems]="totalItems" [(ngModel)]="currentPage" (numPages)="smallnumPages = $event"></pagination>
     </div>
- 
-    <div class="col-md-6">
-        <pager [totalItems]="totalItems" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" pageBtnClass="btn" itemsPerPage="10"></pager>
-    </div>
+    <pre class="card card-block card-header">Page: {{bigCurrentPage}} / {{numPages}}</pre>
 </div>

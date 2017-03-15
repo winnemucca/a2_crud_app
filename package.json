@@ -41,10 +41,12 @@
     "mongoose": "^4.8.5",
     "mongoose-unique-validator": "^1.0.4",
     "ng2-bootstrap": "^1.4.0",
+    "ng2-toastr": "^1.6.0",
     "passport": "*",
     "passport-jwt": "*",
     "rxjs": "^5.1.0",
     "serve-favicon": "^2.4.0",
+    "toastr": "^2.1.2",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
