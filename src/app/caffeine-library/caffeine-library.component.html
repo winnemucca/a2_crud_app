@@ -1,7 +1,10 @@
 <div class="container-fluid">
     <div class="row">
-        <div *ngFor="let drink of caffDrinks" class="panel panel-default">
-
+        <div *ngFor="
+            let drink of caffDrinks | 
+            paginate: {itemsPerPage: 10,
+            currentPage:page, id: '1'}; let i = index" 
+            class="panel panel-default">
             <div class="panel-heading panel-heading-custom">
                 <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
             </div>
@@ -15,7 +18,19 @@
                 </div> 
             </div>
         </div>
-            <pagination 
+        <pagination-controls 
+            (pageChange)="page = $event" id="1"
+            maxSize="5"
+            directionLinks="true"
+            autoHide="true">
+        </pagination-controls>
+           
+    </div>
+    
+</div>
+
+
+ <!--<pagination 
                 class="pagination-sm"
                 [itemsPerPage]="10"
                 [totalItems]="bigTotalItems" 
@@ -23,21 +38,23 @@
                 [maxSize]="maxSize" 
                 [boundaryLinks]="true" 
                 [rotate]="false" 
-                (numPages)="numPages = $event">
-            </pagination>
-        <div class="col-md-6">
-            <!--<pagination 
-                class="pagination-sm"
-                [totalItems]="bigTotalItems" 
-                [(ngModel)]="bigCurrentPage" 
-                [maxSize]="maxSize" 
-                [boundaryLinks]="true" 
-                [rotate]="false" 
-                [itemsPerPage]="10"
                 (numPages)="numPages = $event">
             </pagination>-->
-        </div>
 
-    </div>
-    <pre class="card card-block card-header">Page: {{bigCurrentPage}} / {{numPages}}</pre>
-</div>
+
+            <!--<div class="col-md-6">-->
+            <!--<pagination [directionLinks]="false" 
+                [totalItems]="totalPagerItems" 
+                [itemsPerPage]='noOfItemsPerPage' 
+                [(ngModel)]="currentPagerPage"
+                (pageChanged)="buildPageContents();" 
+                (numPages)="smallnumPagerPages = $event">
+            </pagination>
+    
+            <pager [totalItems]="totalPagerItems"
+                [(ngModel)]="currentPagerPage"
+                [itemsPerPage]='noOfItemsPerPage'
+                (pageChanged)="pageChanged($event)"
+                pageBtnClass="btn">
+            </pager>-->
+        <!--</div>-->

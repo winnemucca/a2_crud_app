@@ -10,7 +10,9 @@ import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 // third party Libraries
-import { AlertModule, PaginationModule } from 'ng2-bootstrap';
+// import { AlertModule, PaginationModule } from 'ng2-bootstrap';
+import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
+
 import {ToastModule, ToastOptions} from 'ng2-toastr/ng2-toastr';
 
 import { ToastCustomOptions } from './shared/common/toastr.service';
@@ -46,7 +48,8 @@ import { AuthGuard } from './shared/guards/auth.guards';
     ReactiveFormsModule,
     HttpModule,
     ToastModule,
-    PaginationModule.forRoot(),
+    // PaginationModule.forRoot(),
+    Ng2PaginationModule,
     RouterModule.forRoot(appRoutes)
 
   ],

@@ -41,6 +41,7 @@
     "mongoose": "^4.8.5",
     "mongoose-unique-validator": "^1.0.4",
     "ng2-bootstrap": "^1.4.0",
+    "ng2-pagination": "^2.0.1",
     "ng2-toastr": "^1.6.0",
     "passport": "*",
     "passport-jwt": "*",
