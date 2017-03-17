@@ -18,4 +18,4 @@ import { ProfileComponent } from '../profile/profile.component';
     ]
 })
 
-export class userModule {};
+export class UserModule {};

@@ -17,6 +17,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['user/profile']">Test</a></li>
         <li *ngIf="!userAuth.loggedIn()"><a [routerLink]="['signUp']">Register </a></li>
         <li *ngIf="userAuth.loggedIn()"><a href="#" (click)="onLogoutClick()">LogOut </a></li>
         

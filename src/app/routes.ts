@@ -11,12 +11,13 @@ import { AuthGuard } from './shared/guards/auth.guards';
 
 export const appRoutes: Routes = [
     { path: 'signUp', component: UserComponent },
-    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+    // { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'library', component: CaffeineLibraryComponent },
     // { path: 'library/:id', component: }
+    { path: 'user', loadChildren: 'app/user/user.module#UserModule'},
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];

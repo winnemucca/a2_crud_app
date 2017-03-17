@@ -24,7 +24,7 @@ import { PageNotFoundComponent } from './404component/404component.component';
 
 import { CaffeineListService } from './caffeine-library/caffeine-list.service';
 import { UserAuthService } from './user/user-auth.service';
-import { ProfileComponent } from './profile/profile.component';
+// import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './shared/guards/auth.guards';
@@ -39,7 +39,7 @@ import { AuthGuard } from './shared/guards/auth.guards';
     DashboardComponent,
     FooterComponent,
     PageNotFoundComponent,
-    ProfileComponent,
+    // ProfileComponent,
     LoginComponent
   ],
   imports: [
@@ -51,7 +51,6 @@ import { AuthGuard } from './shared/guards/auth.guards';
     // PaginationModule.forRoot(),
     Ng2PaginationModule,
     RouterModule.forRoot(appRoutes)
-
   ],
   providers: [
     CaffeineListService, 
