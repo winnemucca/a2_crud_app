@@ -16,6 +16,7 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'library', component: CaffeineLibraryComponent },
+    // { path: 'library/:id', component: }
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];
