@@ -14,22 +14,16 @@
                 </div>
             </div>
             <collapsible-panel> 
-                <div class="col-sm-9 col-md-8 col-lg-8">
+                <div drink-info class="col-sm-9 col-md-8 col-lg-8">
                     <p class="caffeine-label">Size: {{drink.size}} </p>
                     <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
+                    <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> <!-- add conditional by selections-->
                 </div>
-                <div class="col-sm-3 col-md-4 col-lg-4">
+                <div select-drink class="col-sm-3 col-md-4 col-lg-4">
+                    <button class="btn btn-primary">Drinking It</button> <!-- need to identify way around multiple clicks then add better clicking icon-->
+                    <!--<button (click)="selectCaffeineDrink(drink)">Drinking it</button>-->
                 </div> 
             </collapsible-panel>
-            <!--<div class="panel-body panel-body-custom" (click)="selectCaffeineDrink(drink)">
-                <div class="col-sm-9 col-md-8 col-lg-8">
-                    <p class="caffeine-label">Size: {{drink.size}} </p>
-                    <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
-                </div>
-                <div class="col-sm-3 col-md-4 col-lg-4">
-                    <p><i class="fa fa-heart fa-5x"> </i> </p>
-                </div> 
-            </div>-->
         </div>
         <pagination-controls 
             (pageChange)="page = $event" id="1"

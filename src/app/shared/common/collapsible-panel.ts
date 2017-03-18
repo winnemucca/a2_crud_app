@@ -4,7 +4,8 @@ import { Component, Input } from '@angular/core';
     selector: 'collapsible-panel',
     template: ` 
         <div class="panel-body panel-body-custom" (click)="toggleContent()">
-            <ng-content *ngIf="visible"></ng-content>
+            <ng-content *ngIf="visible" select="[drink-info]"> </ng-content>
+            <ng-content *ngIf="visible" select="[select-drink]"></ng-content>
         </div>
     `
 })
@@ -14,6 +15,6 @@ export class CollapsiblePanelComponent {
     visible: boolean = true;
 
     toggleContent() {
-        this.visible = !this.visible;
+       // this.visible = !this.visible;
     }
 }
