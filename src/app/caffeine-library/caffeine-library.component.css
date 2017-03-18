@@ -6,17 +6,6 @@
 .panel-heading-custom {
     background-color: #18BC9C;
     color: #ffffff;
-
+    padding: 1em 0 2em 0;
 }
 
-.panel-body-custom {
-    background-color: #2E83BE;
-}
-
-.caffeine-label {
-    font-size: 2em;
-}
-
-.panel-title-custom {
-    font-size: 1.5em;
-}

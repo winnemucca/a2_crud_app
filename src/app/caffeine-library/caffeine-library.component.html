@@ -6,9 +6,22 @@
             currentPage:page, id: '1'}; let i = index" 
             class="panel panel-default">
             <div class="panel-heading panel-heading-custom">
-                <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
+                <div class="col-sm-9 col-md-8 col-lg-4">
+                    <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-4">
+                    <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
+                </div>
             </div>
-            <div class="panel-body panel-body-custom" (click)="selectCaffeineDrink(drink)">
+            <collapsible-panel> 
+                <div class="col-sm-9 col-md-8 col-lg-8">
+                    <p class="caffeine-label">Size: {{drink.size}} </p>
+                    <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-4">
+                </div> 
+            </collapsible-panel>
+            <!--<div class="panel-body panel-body-custom" (click)="selectCaffeineDrink(drink)">
                 <div class="col-sm-9 col-md-8 col-lg-8">
                     <p class="caffeine-label">Size: {{drink.size}} </p>
                     <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
@@ -16,7 +29,7 @@
                 <div class="col-sm-3 col-md-4 col-lg-4">
                     <p><i class="fa fa-heart fa-5x"> </i> </p>
                 </div> 
-            </div>
+            </div>-->
         </div>
         <pagination-controls 
             (pageChange)="page = $event" id="1"

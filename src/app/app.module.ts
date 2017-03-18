@@ -16,6 +16,8 @@ import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 import {ToastModule, ToastOptions} from 'ng2-toastr/ng2-toastr';
 
 import { ToastCustomOptions } from './shared/common/toastr.service';
+import { CollapsiblePanelComponent } from './shared/common/collapsible-panel';
+
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -40,7 +42,8 @@ import { AuthGuard } from './shared/guards/auth.guards';
     FooterComponent,
     PageNotFoundComponent,
     // ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    CollapsiblePanelComponent
   ],
   imports: [
     BrowserModule,
