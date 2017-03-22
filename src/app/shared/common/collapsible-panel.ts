@@ -22,7 +22,8 @@ export class CollapsiblePanelComponent implements OnChanges{
             this.filteredDrinks = this.drinks.slice(0);
         } else {
             this.filteredDrinks = this.drinks.filter(drink => {
-                return drink.name.toLocaleLowerCase() === filter;
+                // working need to get more
+                return drink.name.toLocaleLowerCase().indexOf(filter) !== -1;
             })
         }
     }
