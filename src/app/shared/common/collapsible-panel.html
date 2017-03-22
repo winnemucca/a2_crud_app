@@ -1,35 +1,34 @@
-
 <div  class="panel panel-default" 
-        *ngFor=" let drink of drinks | 
-        paginate: {itemsPerPage: 10,
-        currentPage:page, id: '1'}; let i = index" >
-        <div class=" panel-heading-custom">
-            <div class="col-sm-9 col-md-8 col-lg-4"> 
-                <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
-            </div>
-            <div class="col-sm-3 col-md-4 col-lg-4">
-                <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
-            </div>
+    *ngFor=" let drink of filteredDrinks | 
+    paginate: {itemsPerPage: 10,
+    currentPage:page, id: '1'}; let i = index" >
+    <div class=" panel-heading-custom">
+        <div class="col-sm-9 col-md-8 col-lg-4"> 
+            <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
         </div>
-        <div class="panel-body panel-body-custom">
-            <div class="text-left">
-                <i class="fa fa-minus" aria-hidden="true" (click)="toggleContent()"></i>
-            </div>
-
-            <div drink-info class="col-sm-9 col-md-8 col-lg-8">
-                <p class="caffeine-label">Size: {{drink.size}} </p>
-                <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
-                <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> 
-            </div>
-            <div select-drink class="col-sm-3 col-md-4 col-lg-4">
-                <button class="btn btn primary" (click)="selectCaffeineDrink(drink)">Drinking it</button>
-            </div>
+        <div class="col-sm-3 col-md-4 col-lg-4">
+            <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
         </div>
     </div>
+    <div class="panel-body panel-body-custom" >
+        <div class="text-right">
+            <i class="fa fa-minus" aria-hidden="true" (click)="toggleContent(i)"></i>
+        </div>
 
-    <pagination-controls 
-        (pageChange)="page = $event" id="1"
-        maxSize="5"
-        directionLinks="true"
-        autoHide="true">
-    </pagination-controls>
+        <div *ngIf="visible" drink-info class="col-sm-9 col-md-8 col-lg-8">
+            <p class="caffeine-label">Size: {{drink.size}} </p>
+            <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
+            <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> 
+        </div>
+        <div *ngIf="visible" select-drink class="col-sm-3 col-md-4 col-lg-4">
+            <button class="btn btn primary" (click)="selectCaffeineDrink(drink)">Drinking it</button>
+        </div>
+    </div>
+</div>
+
+<pagination-controls 
+    (pageChange)="page = $event" id="1"
+    maxSize="5"
+    directionLinks="true"
+    autoHide="true">
+</pagination-controls>

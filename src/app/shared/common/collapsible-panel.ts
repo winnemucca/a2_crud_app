@@ -1,53 +1,38 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
     selector: 'collapsible-panel',
-    template: ` 
-
-    <div  class="panel panel-default" 
-        *ngFor=" let drink of drinks | 
-        paginate: {itemsPerPage: 10,
-        currentPage:page, id: '1'}; let i = index" >
-        <div class=" panel-heading-custom">
-            <div class="col-sm-9 col-md-8 col-lg-4"> 
-                <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
-            </div>
-            <div class="col-sm-3 col-md-4 col-lg-4">
-                <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
-            </div>
-        </div>
-        <div class="panel-body panel-body-custom" >
-            <div class="text-right">
-                <i class="fa fa-minus" aria-hidden="true" (click)="toggleContent()"></i>
-            </div>
-
-            <div *ngIf="visible" drink-info class="col-sm-9 col-md-8 col-lg-8">
-                <p class="caffeine-label">Size: {{drink.size}} </p>
-                <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
-                <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> 
-            </div>
-            <div *ngIf="visible" select-drink class="col-sm-3 col-md-4 col-lg-4">
-                <button class="btn btn primary" (click)="selectCaffeineDrink(drink)">Drinking it</button>
-            </div>
-        </div>
-    </div>
-
-    <pagination-controls 
-        (pageChange)="page = $event" id="1"
-        maxSize="5"
-        directionLinks="true"
-        autoHide="true">
-    </pagination-controls>
-
-    `
+    templateUrl: './collapsible-panel.html'
 })
 
-export class CollapsiblePanelComponent {
+export class CollapsiblePanelComponent implements OnChanges{
     @Input() drinks;
+    @Input() filterBy: string;
+    filteredDrinks = [];
     visible: boolean = true;
 
-    toggleContent() {
-        console.log('clicked');
-        this.visible = !this.visible;
+    ngOnChanges() {
+        if(this.drinks) {
+            this.filterSessions(this.filterBy);
+        }
     }
+
+    filterSessions(filter) {
+        if(filter === 'all') {
+            this.filteredDrinks = this.drinks.slice(0);
+        } else {
+            this.filteredDrinks = this.drinks.filter(drink => {
+                return drink.name.toLocaleLowerCase() === filter;
+            })
+        }
+    }
+
+    toggleContent(i) {
+        console.log(i, this.drinks[i]);
+            this.visible = !this.visible;
+    }
+
+    selectCaffeineDrink(drink) {
+        console.log('clicked', drink)
+  }
 }

@@ -42,11 +42,15 @@ export class CaffeineLibraryComponent implements OnInit, OnChanges {
     }
   }
 
-  selectCaffeineDrink(drink) {
-    console.log('clicked', drink)
-  }
 
 }
+
+
+
+
+
+
+
 
   // maxSize:number = 5;
   // bigTotalItems:number = 726;
