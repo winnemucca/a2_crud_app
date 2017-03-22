@@ -1,23 +1,10 @@
-import { Injectable } from '@angular/core';
-import { ToastOptions } from 'ng2-toastr';
+import { OpaqueToken } from '@angular/core';
 
-declare let toastr: any;
-@Injectable()
- export class ToastCustomOptions extends ToastOptions {
-      // animate = 'flyRight'; // you can override any options available
-      // newestOnTop = false;
-      // showCloseButton = true;
+export let TOASTR_TOKEN = new OpaqueToken('toastr');
 
-      success(message: string, title?: string) {
-            toastr.success(message, title)
-      }
-       info(message: string, title?: string) {
-            toastr.success(message, title)
-      }
-       warning(message: string, title?: string) {
-            toastr.success(message, title)
-      }
-       error(message: string, title?: string) {
-            toastr.success(message, title)
-      }
+export interface Toastr {
+      success (msg: string, title?: string): void;
+      info (msg: string, title?: string): void;
+      warning (msg: string, title?: string): void;
+      error (msg: string, title?: string): void;
 }

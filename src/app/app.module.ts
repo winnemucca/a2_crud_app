@@ -13,9 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 // import { AlertModule, PaginationModule } from 'ng2-bootstrap';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 
-import {ToastModule, ToastOptions} from 'ng2-toastr/ng2-toastr';
 
-import { ToastCustomOptions } from './shared/common/toastr.service';
+import { TOASTR_TOKEN, Toastr } from './shared/common/toastr.service';
 import { CollapsiblePanelComponent } from './shared/common/collapsible-panel';
 
 import { appRoutes } from './routes';
@@ -30,6 +29,9 @@ import { UserAuthService } from './user/user-auth.service';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './shared/guards/auth.guards';
+
+declare let toastr : Toastr;
+
 
 @NgModule({
   declarations: [
@@ -50,16 +52,15 @@ import { AuthGuard } from './shared/guards/auth.guards';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ToastModule,
     // PaginationModule.forRoot(),
     Ng2PaginationModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     CaffeineListService, 
+    // { provide: TOASTR_TOKEN, useValue: toastr },
     UserAuthService, 
     AuthGuard,
-    {provide: ToastOptions, useClass: ToastCustomOptions},
     ],
   bootstrap: [AppComponent]
 })
