@@ -16,17 +16,17 @@ import { Component, Input } from '@angular/core';
                 <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
             </div>
         </div>
-        <div class="panel-body panel-body-custom">
-            <div class="text-left">
+        <div class="panel-body panel-body-custom" >
+            <div class="text-right">
                 <i class="fa fa-minus" aria-hidden="true" (click)="toggleContent()"></i>
             </div>
 
-            <div drink-info class="col-sm-9 col-md-8 col-lg-8">
+            <div *ngIf="visible" drink-info class="col-sm-9 col-md-8 col-lg-8">
                 <p class="caffeine-label">Size: {{drink.size}} </p>
                 <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
                 <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> 
             </div>
-            <div select-drink class="col-sm-3 col-md-4 col-lg-4">
+            <div *ngIf="visible" select-drink class="col-sm-3 col-md-4 col-lg-4">
                 <button class="btn btn primary" (click)="selectCaffeineDrink(drink)">Drinking it</button>
             </div>
         </div>
