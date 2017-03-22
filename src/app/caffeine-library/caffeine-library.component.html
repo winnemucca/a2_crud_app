@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Search Drinks</h2>
-            <button>
+            <button class="customScroll-chevron">
                 <i class="glyphicon glyphicon-chevron-left"></i>
             </button>
             <button type="button" 
@@ -36,10 +36,20 @@
                 Shot    
             </button>
             <button type="button" 
-                class="btn btn-danger btn-circle btn-xl">
-                <i class="glyphicon glyphicon-heart"></i>
+                class="btn btn-danger btn-circle btn-xl"
+                [class.active]="filterBy==='water'" 
+                (click)="filterBy='water'">
+                Water
             </button>
-            <button>
+            <!-- TODO need some form of regex or add on for cola-->
+            <button type="button" 
+                class="btn btn-danger btn-circle btn-xl"
+                [class.active]="filterBy==='soda'" 
+                (click)="filterBy='soda'">
+                Soft Drink
+            </button>
+            <!--********************-->
+            <button class="customScroll-chevron">
                 <i class="glyphicon glyphicon-chevron-right"></i>
             </button>
         </div>

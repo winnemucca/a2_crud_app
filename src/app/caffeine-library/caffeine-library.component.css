@@ -34,5 +34,14 @@
   line-height: 1.33;
   border-radius: 35px;
   white-space: normal;
+  outline: none;
+}
+
+.customScroll-chevron {
+    background: transparent;
+    border: none;
+    color: #5BC0DE;
+    font-size: 1.5em;
+    outline: none;
 }
 
