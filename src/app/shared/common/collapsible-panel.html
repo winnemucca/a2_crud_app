@@ -1,10 +1,5 @@
-import { Component, Input } from '@angular/core';
 
-@Component({
-    selector: 'collapsible-panel',
-    template: ` 
-
-    <div  class="panel panel-default" 
+<div  class="panel panel-default" 
         *ngFor=" let drink of drinks | 
         paginate: {itemsPerPage: 10,
         currentPage:page, id: '1'}; let i = index" >
@@ -38,16 +33,3 @@ import { Component, Input } from '@angular/core';
         directionLinks="true"
         autoHide="true">
     </pagination-controls>
-
-    `
-})
-
-export class CollapsiblePanelComponent {
-    @Input() drinks;
-    visible: boolean = true;
-
-    toggleContent() {
-        console.log('clicked');
-        this.visible = !this.visible;
-    }
-}

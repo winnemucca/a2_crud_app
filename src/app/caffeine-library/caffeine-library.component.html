@@ -1,37 +1,33 @@
 <div class="container-fluid">
     <div class="row">
-        <div *ngFor="
-            let drink of caffDrinks | 
-            paginate: {itemsPerPage: 10,
-            currentPage:page, id: '1'}; let i = index" 
-            class="panel panel-default">
-            <div class="panel-heading panel-heading-custom">
-                <div class="col-sm-9 col-md-8 col-lg-4">
-                    <h3 class="panel-title panel-title-custom">{{drink.name}}</h3>
-                </div>
-                <div class="col-sm-3 col-md-4 col-lg-4">
-                    <p>Add to Favorites: <i class="fa fa-heart"> </i> </p>
-                </div>
+        <div class="col-md-12">
+            <div class="btn-group btn-group-lg" role="group"> 
+                <button class="btn btn-default" 
+                    [class.active]="filterBy==='all'"
+                    (click)="filterBy='all'">All</button>
+                <button class="btn btn-default" 
+                    [class.active]="filterBy==='energy'" 
+                    (click)="filterBy='energy'">Energy Drinks</button>
+                <!--<button class="btn btn-default" [class.active]="" (click)="">Soft Drink</button>-->
+                <button class="btn btn-default" 
+                    [class.active]="filterBy==='energy'" 
+                    (click)="filterBy='coffee'">Coffee</button>
+                <button class="btn btn-default" 
+                    [class.active]="filterBy==='tea'" 
+                    (click)="filterBy='tea'">Tea</button>
+                <button class="btn btn-default" 
+                    [class.active]="filterBy==='shot'" 
+                    (click)="filterBy='shot'">Shot</button>
             </div>
-            <collapsible-panel> 
-                <div drink-info class="col-sm-9 col-md-8 col-lg-8">
-                    <p class="caffeine-label">Size: {{drink.size}} </p>
-                    <p class="caffeine-label">Caffeine: {{drink.caffeine}}</p>
-                    <i class="fa fa-fire fa-3x" aria-hidden="true" style="color:red"></i> <!-- add conditional by selections-->
-                </div>
-                <div select-drink class="col-sm-3 col-md-4 col-lg-4">
-                    <button class="btn btn-primary">Drinking It</button> <!-- need to identify way around multiple clicks then add better clicking icon-->
-                    <!--<button (click)="selectCaffeineDrink(drink)">Drinking it</button>-->
-                </div> 
-            </collapsible-panel>
+            
+            
         </div>
-        <pagination-controls 
-            (pageChange)="page = $event" id="1"
-            maxSize="5"
-            directionLinks="true"
-            autoHide="true">
-        </pagination-controls>
-           
+    </div>
+    <div class="row">
+        <div>
+            <collapsible-panel [drinks]="caffDrinks">    
+            </collapsible-panel>
+        </div>     
     </div>
     
 </div>

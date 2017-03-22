@@ -1,6 +1,16 @@
+
 .panel-default {
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
+}
+
+.panel-heading-custom {
+    background-color: #18BC9C;
+    color: #ffffff;
+    padding: 1em 0 2em 0;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .panel-body-custom {
