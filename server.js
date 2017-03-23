@@ -14,7 +14,7 @@ const app = express();
 const api = require('./server/routes/api');
 const users = require('./server/routes/signIn');
 const userDrinkRoutes = require('./server/routes/caffeineApiRoute');
-
+const userSelectedDrinkRoute = require('./server/routes/userDrinkRoute');
 // moved database configuration to seperate file
 mongoose.connect(config.database);
 mongoose.connection.on('connected', () => {
@@ -41,9 +41,9 @@ app.use('/api', api);
 
 app.use('/users', users);
 
-// **   todo ****
-// ************************* 
 app.use('/caffeineDrinks', userDrinkRoutes);
+
+app.use('/userCaffeineList', userSelectedDrinkRoute);
 
 
 // ******* need to study up on following response.send ***********
