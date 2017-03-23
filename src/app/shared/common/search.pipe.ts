@@ -7,12 +7,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class SearchPipe implements PipeTransform{
 
-    transform(value: any, term:any) {
+    transform(items: any, term:any) {
         //check if searchTerm is undefined
         if(term === undefined) {
-            return value
+            return items;
         } else {
-            value.filter( item => item.name.indexOf(term) !== -1)
+            return items.filter( item => item.name.toLowerCase().includes(term.toLowerCase()) );
         }
     }
 }
