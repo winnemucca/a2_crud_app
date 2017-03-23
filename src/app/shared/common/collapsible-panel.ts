@@ -1,13 +1,19 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Component({
     selector: 'collapsible-panel',
     templateUrl: './collapsible-panel.html'
 })
 
-export class CollapsiblePanelComponent implements OnChanges{
+export class CollapsiblePanelComponent implements OnChanges, OnInit{
+
     @Input() drinks;
     @Input() filterBy: string;
+    @Input() searchText: string;
+    @Input() term: string;
+
     filteredDrinks = [];
     visible: boolean = true;
 
@@ -15,6 +21,10 @@ export class CollapsiblePanelComponent implements OnChanges{
         if(this.drinks) {
             this.filterSessions(this.filterBy);
         }
+    }
+
+    ngOnInit() {
+       
     }
 
     filterSessions(filter) {

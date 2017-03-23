@@ -30,6 +30,8 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './shared/guards/auth.guards';
 
+import { SearchPipe } from './shared/common/search.pipe';
+
 declare let toastr : Toastr;
 
 
@@ -45,7 +47,8 @@ declare let toastr : Toastr;
     PageNotFoundComponent,
     // ProfileComponent,
     LoginComponent,
-    CollapsiblePanelComponent
+    CollapsiblePanelComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,26 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'search'
+    name: 'searchPipe',
+    pure: false
 })
 
-export class SearchPipe {
+export class SearchPipe implements PipeTransform{
 
-    transform(value, [term]) {
-        return value.filter( item => item.name.startsWith(term))
+    transform(value: any, term:any) {
+        //check if searchTerm is undefined
+        if(term === undefined) {
+            return value
+        } else {
+            value.filter( item => item.name.indexOf(term) !== -1)
+        }
     }
 }
+
+
+// transform(data: any[], searchTerm: string): any[] {
+//       searchTerm = searchTerm.toUpperCase();
+//       return data.filter(item => {
+//         return item.toUpperCase().indexOf(searchTerm) !== -1 
+//       });
+//   }

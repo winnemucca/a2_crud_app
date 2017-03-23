@@ -1,7 +1,12 @@
 <div class="container-fluid">
     <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="inputlg">Search Drinks</label>
+                <input [(ngModel)]="term"  name="term" class="form-control input-lg" id="inputlg" type="text" placeholder="Search Drinks">
+            </div>
+        </form>
         <div class="col-md-12">
-            <h2>Search Drinks</h2>
             <button class="customScroll-chevron">
                 <i class="glyphicon glyphicon-chevron-left"></i>
             </button>
@@ -56,7 +61,7 @@
     </div>
     <div class="row">
         <div>
-            <collapsible-panel [filterBy]="filterBy" [drinks]="caffDrinks">    
+            <collapsible-panel [filterBy]="filterBy" [drinks]="caffDrinks" [searchText]="searchText">    
             </collapsible-panel>
         </div>     
     </div>
