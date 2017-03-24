@@ -12,9 +12,17 @@ router.post('/addDrink', (req, res, next) => {
         size: req.body.size
     });
     // let newDrink = new UserDrinks(req.body);
-
     newDrink.save();
     res.status(201).json(newDrink);
+
+    // newDrink.save( (err) => {
+    //     if(err) {
+    //         res.send(err);
+    //     } else {
+    //         res.status(201).json(newDrink);
+    //     }
+
+    // })
 });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const mongooseUniqueValidator = require('mongoose-unique-validator');
-
+const SelectedDrinks = require('./userDrinks');
 const UserSchema = mongoose.Schema({
     name: {
         type: String
@@ -17,8 +17,13 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
-
+    },
+    caffeine_list: [
+        { 
+            type: mongoose.Schema.ObjectId, 
+            ref: 'SelectedDrinks' // further test
+        }
+    ]
 })
 
 
