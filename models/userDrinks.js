@@ -1,6 +1,8 @@
-let express = require('express');
-let mongoose = require('mongoose');
-var User = require('./user');
+const express = require('express');
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+const User = require('./user');
 
 let userDrinkSchema = new mongoose.Schema({ // if issues go back to new Schema
    // user: [User],

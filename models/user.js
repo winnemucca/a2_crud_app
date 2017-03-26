@@ -20,7 +20,7 @@ const UserSchema = mongoose.Schema({
     },
     caffeine_list: [
         { 
-            type: mongoose.Schema.ObjectId, 
+            type: mongoose.Schema.Types.ObjectId, 
             ref: 'SelectedDrinks' // further test
         }
     ]

@@ -16,6 +16,7 @@ const users = require('./server/routes/signIn');
 const userDrinkRoutes = require('./server/routes/caffeineApiRoute');
 const userSelectedDrinkRoute = require('./server/routes/userDrinkRoute');
 // moved database configuration to seperate file
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database);
 mongoose.connection.on('connected', () => {
     console.log('connected to database' +config.database)
