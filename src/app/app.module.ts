@@ -10,7 +10,6 @@ import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 // third party Libraries
-// import { AlertModule, PaginationModule } from 'ng2-bootstrap';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 
 
@@ -56,7 +55,6 @@ import { SearchPipe } from './shared/common/search.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    // PaginationModule.forRoot(),
     Ng2PaginationModule,
     RouterModule.forRoot(appRoutes)
   ],
