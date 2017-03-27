@@ -28,15 +28,7 @@ router.post('/addDrink', (req, res, next) => {
                     }
                 })
             })
-            // User.findOne()
-            //     .populate('caffeine_list')
-            //     .exec( (err, doc) => {
-            //         if(err) {
-            //             return err;
-            //         } else {
-            //             res.status(201).json(doc);
-            //         }
-            //     })
+           
         }
 
     })

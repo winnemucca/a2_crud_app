@@ -14,7 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 
 
-import { TOASTR_TOKEN, Toastr } from './shared/common/toastr.service';
+// import { TOASTR_TOKEN, Toastr } from './shared/common/toastr.service';
 import { CollapsiblePanelComponent } from './shared/common/collapsible-panel';
 
 import { appRoutes } from './routes';
@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './404component/404component.component';
 
 import { CaffeineListService } from './caffeine-library/caffeine-list.service';
 import { UserAuthService } from './user/user-auth.service';
+import { UserCaffListService } from './dashboard/shared/user-caffeine-list.service';
 // import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
@@ -32,7 +33,7 @@ import { AuthGuard } from './shared/guards/auth.guards';
 
 import { SearchPipe } from './shared/common/search.pipe';
 
-declare let toastr : Toastr;
+// declare let toastr : Toastr;
 
 
 @NgModule({
@@ -61,6 +62,7 @@ declare let toastr : Toastr;
   ],
   providers: [
     CaffeineListService, 
+    UserCaffListService,
     // { provide: TOASTR_TOKEN, useValue: toastr },
     UserAuthService, 
     AuthGuard,
