@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const mongooseUniqueValidator = require('mongoose-unique-validator');
-const SelectedDrinks = require('./userDrinks');
+const SelectedDrinks = require('./userDrinks').schema;
 const UserSchema = mongoose.Schema({
     name: {
         type: String
@@ -18,12 +18,12 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    caffeine_list: [
-        { 
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: 'UserDrinks' // name of the file
-        }
-    ]
+    caffeine_list: [SelectedDrinks]
+    //     { 
+    //         type: mongoose.Schema.Types.ObjectId, 
+    //         ref: 'UserDrinks' // name of the file
+    //     }
+    // ]
 })
 
 

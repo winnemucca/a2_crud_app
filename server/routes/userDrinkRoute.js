@@ -19,9 +19,7 @@ router.post('/addDrink', (req, res, next) => {
             res.send(err);
         } else {
             User.findOne({ _id: newDrink.creator},  (err, user) => {
-                console.log('us', user);
                 user.caffeine_list.addToSet(newDrink)
-                console.log('newDrink', newDrink);
                 user.save( function (err) {
                     if(err) {
                         console.log(err);
@@ -30,6 +28,15 @@ router.post('/addDrink', (req, res, next) => {
                     }
                 })
             })
+            // User.findOne()
+            //     .populate('caffeine_list')
+            //     .exec( (err, doc) => {
+            //         if(err) {
+            //             return err;
+            //         } else {
+            //             res.status(201).json(doc);
+            //         }
+            //     })
         }
 
     })
