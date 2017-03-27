@@ -5,18 +5,64 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch",
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/server.js"
+            "program": "${workspaceRoot}/server.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": false,
+            "outDir": null
         },
         {
+            "name": "Attach",
             "type": "node",
             "request": "attach",
-            "name": "Attach to Process",
-            "address": "localhost",
             "port": 5858,
-            "restart": true
+            "address": "localhost",
+            "restart": true,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
         }
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "nodemon",
+        //     "runtimeExecutable": "nodemon",
+        //     "runtimeArgs": [
+        //         "--debug=5858"
+        //     ],
+        //     "program": "${workspaceRoot}/server.js",
+        //     "restart": true,
+        //     "port": 5858,
+        //     "console": "integratedTerminal",
+        //     "internalConsoleOptions": "neverOpen"
+        // }
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "Launch Program",
+        //     "program": "${workspaceRoot}/server.js"
+        // },
+        // {
+        //     "type": "node",
+        //     "request": "attach",
+        //     "name": "Attach to Process",
+        //     "address": "localhost",
+        //     "port": 5858,
+        //     "restart": true
+        // }
     ]
 }

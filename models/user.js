@@ -21,7 +21,7 @@ const UserSchema = mongoose.Schema({
     caffeine_list: [
         { 
             type: mongoose.Schema.Types.ObjectId, 
-            ref: 'SelectedDrinks' // further test
+            ref: 'UserDrinks' // name of the file
         }
     ]
 })
