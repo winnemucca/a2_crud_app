@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isIn = false;
 
   constructor(
     private userAuth: UserAuthService,
@@ -17,6 +18,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  toggleState() { // click handler for navbar toggle
+    const bool = this.isIn;
+    this.isIn = bool === false ? true : false;
   }
 
   onLogoutClick() {
