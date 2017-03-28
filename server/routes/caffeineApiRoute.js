@@ -9,6 +9,7 @@ router.get('/drinks', (req, res) => {
                 error: err
             })
         } else {
+            console.log('drinks', drinks[0])
             res.status(200).json(drinks);
         }
     })

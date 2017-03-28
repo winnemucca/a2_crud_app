@@ -14,7 +14,9 @@ export class UserCaffListService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('http://localhost:3000/userCaffeineList/addDrink', user, {headers: headers})
-            .map(res => res.json());
+            .map((res: Response) => res.json())
+            .do(data => console.log('data: ' + JSON.stringify(data)))
+            .catch(this.handleError);
     }
 
     getUserDrinkList() {
@@ -28,4 +30,9 @@ export class UserCaffListService {
     updateUserDrinkListItem() {
 
     }
+
+    private handleError(error: Response) {
+    console.log(error);
+    return Observable.throw(error.json().error || 'server error');
+  }
 }

@@ -34,4 +34,19 @@ router.post('/addDrink', (req, res, next) => {
     })
 });
 
+
+//  User.update(
+//     { _id: newDrink.creator},            
+//     {  $addToSet:{ 
+//       caffeine_list: newDrink
+//   }}).exec(function (err, updatedrink){
+
+//     if(err) {
+//         console.log(err);
+//     }else {
+//         res.status(201).json(updatedrink);
+//     }
+
+// })
+
 module.exports = router;

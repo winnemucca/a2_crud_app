@@ -2,7 +2,6 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 import { CaffeineModel } from './caffeine-model';
 import { CaffeineListService } from './caffeine-list.service';
-import { UserCaffListService } from '../shared/services/user-caffeine-list.service';
 
 @Component({
   selector: 'app-caffeine-library',
@@ -15,7 +14,7 @@ export class CaffeineLibraryComponent implements OnInit, OnChanges {
   filterBy = 'all';
   visibleCaffDrinks: CaffeineModel[];
 
-  constructor(private _caffeineListService: CaffeineListService, _userCaffService: UserCaffListService) { }
+  constructor(private _caffeineListService: CaffeineListService) { }
 
 
   ngOnInit(): void {

@@ -2,6 +2,9 @@ import { Component, Input, OnChanges, ElementRef, ViewChild, OnInit } from '@ang
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
+import { UserCaffListService } from '../services/user-caffeine-list.service';
+
+
 @Component({
     selector: 'collapsible-panel',
     templateUrl: './collapsible-panel.html'
@@ -16,6 +19,8 @@ export class CollapsiblePanelComponent implements OnChanges, OnInit {
 
     filteredDrinks = [];
     visible = true;
+
+    constructor( private _userCaffService: UserCaffListService) {}
 
     ngOnChanges() {
         if (this.drinks) {
@@ -44,6 +49,9 @@ export class CollapsiblePanelComponent implements OnChanges, OnInit {
     }
 
     selectCaffeineDrink(drink) {
-        console.log('clicked', drink);
+        // this._userCaffService.postUserDrinkList(drink).subscribe(data => {
+        // console.log('clicked', drink);
+
+        // });
   }
 }

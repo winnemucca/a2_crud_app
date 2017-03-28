@@ -1,7 +1,14 @@
 let express = require('express');
 let mongoose = require('mongoose');
+const User = require('./user');
 
-let DrinkSchema = new mongoose.Schema({ // if issues go back to new Schema
+let DrinkSchema = new mongoose.Schema({
+    user: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'user',
+        required: true,
+        default: null
+    },
     caffeine: Number,
     mgFloz: Number,
     name: String,
