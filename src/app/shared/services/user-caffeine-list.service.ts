@@ -10,10 +10,22 @@ export class UserCaffListService {
 
     constructor(private http: Http) {}
 
-    getUserDrinkList(user) {
+    postUserDrinkList(user) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('http://localhost:3000/userCaffeineList/addDrink', user, {headers: headers})
             .map(res => res.json());
+    }
+
+    getUserDrinkList() {
+
+    }
+
+    deleteUserDrinkListItem() {
+
+    }
+
+    updateUserDrinkListItem() {
+
     }
 }

@@ -7,7 +7,7 @@ import 'rxjs/Rx';
     templateUrl: './collapsible-panel.html'
 })
 
-export class CollapsiblePanelComponent implements OnChanges, OnInit{
+export class CollapsiblePanelComponent implements OnChanges, OnInit {
 
     @Input() drinks;
     @Input() filterBy: string;
@@ -15,26 +15,26 @@ export class CollapsiblePanelComponent implements OnChanges, OnInit{
     @Input() term: string;
 
     filteredDrinks = [];
-    visible: boolean = true;
+    visible = true;
 
     ngOnChanges() {
-        if(this.drinks) {
+        if (this.drinks) {
             this.filterSessions(this.filterBy);
         }
     }
 
     ngOnInit() {
-       
+
     }
 
     filterSessions(filter) {
-        if(filter === 'all') {
+        if (filter === 'all') {
             this.filteredDrinks = this.drinks.slice(0);
         } else {
             this.filteredDrinks = this.drinks.filter(drink => {
                 // working need to get more
                 return drink.name.toLocaleLowerCase().indexOf(filter) !== -1;
-            })
+            });
         }
     }
 
@@ -44,6 +44,6 @@ export class CollapsiblePanelComponent implements OnChanges, OnInit{
     }
 
     selectCaffeineDrink(drink) {
-        console.log('clicked', drink)
+        console.log('clicked', drink);
   }
 }
