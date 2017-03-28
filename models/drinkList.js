@@ -1,6 +1,6 @@
 let express = require('express');
 let mongoose = require('mongoose');
-const User = require('./user');
+const User = require('./user').schema;
 
 let DrinkSchema = new mongoose.Schema({
     user: { 

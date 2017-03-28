@@ -19,11 +19,6 @@ const UserSchema = mongoose.Schema({
         required: true
     },
     caffeine_list: [SelectedDrinks]
-    //     { 
-    //         type: mongoose.Schema.Types.ObjectId, 
-    //         ref: 'UserDrinks' // name of the file
-    //     }
-    // ]
 })
 
 
