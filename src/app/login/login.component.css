@@ -16,6 +16,7 @@
 }
 .profile-img
 {
+    /*refactor styling once this is moved onto main page*/
     width: 96px;
     height: 96px;
     margin: 0 auto 10px;
@@ -23,4 +24,9 @@
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+}
+
+.new-account {
+    display: block;
+    margin-top: 10px;
 }
