@@ -11,3 +11,7 @@ nav {
     color: #5BC0DE;
     transform: scale(1.2); 
 }
+
+.icon-bar {
+    background-color: #fff;
+}
