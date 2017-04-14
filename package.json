@@ -27,6 +27,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.0",
     "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^0.5.10",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
     "cors": "^2.8.1",

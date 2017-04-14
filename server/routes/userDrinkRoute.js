@@ -6,7 +6,7 @@ const UserDrinks = require('../../models/userDrinks');
 
 router.post('/addDrink', (req, res, next) => {
     let newDrink = new UserDrinks({
-        creator: req.body.creator,
+        creator: req.body.creator, // need id get user object id()
         caffeine: req.body.caffeine,
         mgFloz: req.body.mgFloz,
         name: req.body.name,
