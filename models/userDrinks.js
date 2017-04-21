@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const User = require('./user');
 
 let userDrinkSchema = new mongoose.Schema({ // if issues go back to new Schema
-    creator : { 
+    user : { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'user'  // name of user file
     },

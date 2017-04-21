@@ -8,7 +8,7 @@ let DrinkSchema = new mongoose.Schema({
         ref: 'user',
         required: true,
         default: null
-    },
+    }, // the user field shouldn't be here 
     caffeine: Number,
     mgFloz: Number,
     name: String,
