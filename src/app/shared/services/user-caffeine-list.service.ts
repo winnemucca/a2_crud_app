@@ -10,10 +10,12 @@ export class UserCaffListService {
 
     constructor(private http: Http) {}
 
-    postUserDrinkList(user) {
+    postUserDrinkList(drink) {
         let headers = new Headers();
+        const token = localStorage.getItem('id_token');
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/userCaffeineList/addDrink', user, {headers: headers})
+        //headers.append('Authorization', token); i think this will make the difference
+        return this.http.post('http://localhost:3000/userCaffeineList/addDrink/', drink, {headers: headers})
             .map((res: Response) => res.json())
             .do(data => console.log('data: ' + JSON.stringify(data)))
             .catch(this.handleError);

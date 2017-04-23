@@ -49,10 +49,9 @@ export class CollapsiblePanelComponent implements OnChanges, OnInit {
     }
 
     selectCaffeineDrink(drink) {
-        console.log(localStorage);
-        // this._userCaffService.postUserDrinkList(drink).subscribe(data => {
-        // console.log('clicked', drink);
+        this._userCaffService.postUserDrinkList(drink).subscribe(data => {
+         console.log('clicked', drink);
 
-        // });
+    });
   }
 }
