@@ -6,7 +6,7 @@ const UserDrinks = require('../../models/userDrinks');
 
 router.post('/addDrink', (req, res, next) => {
     let newDrink = new UserDrinks({
-        user: req.body.user, //req.body._id
+        user: req.headers.authorization, //req.body._id
         caffeine: req.body.caffeine, 
         mgFloz: req.body.mgFloz,
         name: req.body.name,

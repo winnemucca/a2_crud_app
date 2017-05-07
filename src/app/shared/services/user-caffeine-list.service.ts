@@ -12,9 +12,10 @@ export class UserCaffListService {
 
     postUserDrinkList(drink) {
         let headers = new Headers();
-        const token = localStorage.getItem('id_token');
+        const idToken = JSON.parse(localStorage.user);
         headers.append('Content-Type', 'application/json');
-        //headers.append('Authorization', token); i think this will make the difference
+        headers.append('Authorization', idToken.id); 
+        //i think this will make the //difference
         return this.http.post('http://localhost:3000/userCaffeineList/addDrink/', drink, {headers: headers})
             .map((res: Response) => res.json())
             .do(data => console.log('data: ' + JSON.stringify(data)))
